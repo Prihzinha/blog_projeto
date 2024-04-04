@@ -1,0 +1,93 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLOWED_HOSTS	project/Blog/settings.py	/^ALLOWED_HOSTS = []$/;"	v
+AUTH_PASSWORD_VALIDATORS	project/Blog/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	v
+BASE_DIR	project/Blog/settings.py	/^BASE_DIR = Path(__file__).resolve().parent.parent$/;"	v
+BlogPost	project/home/models.py	/^class BlogPost(models.Model):$/;"	c
+BlogPostForm	project/home/forms.py	/^class BlogPostForm(forms.ModelForm):$/;"	c
+CKEDITOR_UPLOAD_PATH	project/Blog/settings.py	/^CKEDITOR_UPLOAD_PATH = "uploads\/"$/;"	v
+Comment	project/home/models.py	/^class Comment(models.Model):$/;"	c
+DATABASES	project/Blog/settings.py	/^DATABASES = {$/;"	v
+DEBUG	project/Blog/settings.py	/^DEBUG = True$/;"	v
+DEFAULT_AUTO_FIELD	project/Blog/settings.py	/^DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"/;"	v
+HomeConfig	project/home/apps.py	/^class HomeConfig(AppConfig):$/;"	c
+INSTALLED_APPS	project/Blog/settings.py	/^INSTALLED_APPS = [$/;"	v
+LANGUAGE_CODE	project/Blog/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
+Login	project/home/views.py	/^def Login(request):$/;"	f
+MEDIA_ROOT	project/Blog/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, "media")$/;"	v
+MEDIA_URL	project/Blog/settings.py	/^MEDIA_URL = "\/media\/"$/;"	v
+MIDDLEWARE	project/Blog/settings.py	/^MIDDLEWARE = [$/;"	v
+Meta	project/home/forms.py	/^    class Meta:$/;"	c	class:BlogPostForm
+Meta	project/home/forms.py	/^    class Meta:$/;"	c	class:ProfileForm
+Migration	project/home/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	project/home/migrations/0002_alter_blogpost_slug.py	/^class Migration(migrations.Migration):$/;"	c
+Profile	project/home/models.py	/^class Profile(models.Model):$/;"	c
+ProfileForm	project/home/forms.py	/^class ProfileForm(forms.ModelForm):$/;"	c
+ROOT_URLCONF	project/Blog/settings.py	/^ROOT_URLCONF = 'Blog.urls'$/;"	v
+Register	project/home/views.py	/^def Register(request):$/;"	f
+SECRET_KEY	project/Blog/settings.py	/^SECRET_KEY = 'ejcw-d5t67dgrz$_evfgd#kz7y_ku70urb5bnncn2^3*&o0l&@'$/;"	v
+STATICFILES_DIRS	project/Blog/settings.py	/^STATICFILES_DIRS = [$/;"	v
+STATIC_URL	project/Blog/settings.py	/^STATIC_URL = "static\/"$/;"	v
+TEMPLATES	project/Blog/settings.py	/^TEMPLATES = [$/;"	v
+TIME_ZONE	project/Blog/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
+USE_I18N	project/Blog/settings.py	/^USE_I18N = True$/;"	v
+USE_L10N	project/Blog/settings.py	/^USE_L10N = True$/;"	v
+USE_TZ	project/Blog/settings.py	/^USE_TZ = True$/;"	v
+WSGI_APPLICATION	project/Blog/settings.py	/^WSGI_APPLICATION = 'Blog.wsgi.application'$/;"	v
+__str__	project/home/models.py	/^    def __str__(self):$/;"	m	class:BlogPost	file:
+__str__	project/home/models.py	/^    def __str__(self):$/;"	m	class:Comment	file:
+__str__	project/home/models.py	/^    def __str__(self):$/;"	m	class:Profile	file:
+add_blogs	project/home/views.py	/^def add_blogs(request):$/;"	f
+application	project/Blog/asgi.py	/^application = get_asgi_application()$/;"	v
+application	project/Blog/wsgi.py	/^application = get_wsgi_application()$/;"	v
+author	project/home/models.py	/^    author= models.ForeignKey(User, on_delete=models.CASCADE)$/;"	v	class:BlogPost
+bio	project/home/models.py	/^    bio = models.TextField(blank=True, null=True)$/;"	v	class:Profile
+blog	project/home/models.py	/^    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE)$/;"	v	class:Comment
+blogs	project/home/views.py	/^def blogs(request):  # home$/;"	f
+blogs_comments	project/home/views.py	/^def blogs_comments(request, slug):$/;"	f
+content	project/home/models.py	/^    content = models.TextField()$/;"	v	class:Comment
+content	project/home/models.py	/^    content=RichTextUploadingField()$/;"	v	class:BlogPost
+dateTime	project/home/models.py	/^    dateTime = models.DateTimeField(default=now)$/;"	v	class:Comment
+dateTime	project/home/models.py	/^    dateTime=models.DateTimeField(auto_now_add=True)$/;"	v	class:BlogPost
+default_auto_field	project/home/apps.py	/^    default_auto_field = 'django.db.models.BigAutoField'$/;"	v	class:HomeConfig
+dependencies	project/home/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	project/home/migrations/0002_alter_blogpost_slug.py	/^    dependencies = [$/;"	v	class:Migration
+edit_profile_view	project/home/views.py	/^def edit_profile_view(request):$/;"	f
+facebook	project/home/models.py	/^    facebook = models.CharField(max_length=300, blank=True, null=True)$/;"	v	class:Profile
+field	project/home/migrations/0002_alter_blogpost_slug.py	/^            field=models.CharField(max_length=130),$/;"	v	class:Migration
+fields	project/home/forms.py	/^        fields = ('phone_no', 'bio', 'facebook', 'instagram', 'linkedin')     $/;"	v	class:ProfileForm.Meta
+fields	project/home/forms.py	/^        fields = ('title', 'slug', 'content', 'image')$/;"	v	class:BlogPostForm.Meta
+fields	project/home/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
+get_absolute_url	project/home/models.py	/^    def get_absolute_url(self):$/;"	m	class:BlogPost
+image	project/home/models.py	/^    image = models.ImageField(upload_to="profile_pics", blank=True, null=True)$/;"	v	class:BlogPost
+image	project/home/models.py	/^    image = models.ImageField(upload_to="profile_pics", blank=True, null=True)$/;"	v	class:Profile
+initial	project/home/migrations/0001_initial.py	/^    initial = True$/;"	v	class:Migration
+instagram	project/home/models.py	/^    instagram = models.CharField(max_length=300, blank=True, null=True)$/;"	v	class:Profile
+linkedin	project/home/models.py	/^    linkedin = models.CharField(max_length=300, blank=True, null=True)$/;"	v	class:Profile
+main	project/manage.py	/^def main():$/;"	f
+model	project/home/forms.py	/^        model = BlogPost$/;"	v	class:BlogPostForm.Meta
+model	project/home/forms.py	/^        model = Profile$/;"	v	class:ProfileForm.Meta
+model_name	project/home/migrations/0002_alter_blogpost_slug.py	/^            model_name='blogpost',$/;"	v	class:Migration
+name	project/home/apps.py	/^    name = 'home'$/;"	v	class:HomeConfig
+name	project/home/migrations/0001_initial.py	/^            name='BlogPost',$/;"	v	class:Migration
+name	project/home/migrations/0001_initial.py	/^            name='Comment',$/;"	v	class:Migration
+name	project/home/migrations/0001_initial.py	/^            name='Profile',$/;"	v	class:Migration
+name	project/home/migrations/0002_alter_blogpost_slug.py	/^            name='slug',$/;"	v	class:Migration
+operations	project/home/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+operations	project/home/migrations/0002_alter_blogpost_slug.py	/^    operations = [$/;"	v	class:Migration
+parent_comment	project/home/models.py	/^    parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)   $/;"	v	class:Comment
+phone_no	project/home/models.py	/^    phone_no = models.IntegerField(blank=True, null=True)$/;"	v	class:Profile
+post	project/home/views.py	/^def post(request, slug):  $/;"	f
+profile_view	project/home/views.py	/^def profile_view(request):$/;"	f
+search_view	project/home/views.py	/^def search_view(request):$/;"	f
+slug	project/home/models.py	/^    slug=models.CharField(max_length=130)$/;"	v	class:BlogPost
+title	project/home/models.py	/^    title=models.CharField(max_length=255)$/;"	v	class:BlogPost
+urlpatterns	project/Blog/urls.py	/^urlpatterns = [$/;"	v
+urlpatterns	project/home/urls.py	/^urlpatterns = [$/;"	v
+user	project/home/models.py	/^    user = models.ForeignKey(User, on_delete=models.CASCADE)$/;"	v	class:Comment
+user	project/home/models.py	/^    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)$/;"	v	class:Profile
+widgets	project/home/forms.py	/^        widgets = {$/;"	v	class:BlogPostForm.Meta
