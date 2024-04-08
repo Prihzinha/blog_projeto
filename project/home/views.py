@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .models import *
@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm, BlogPostForm
 from django.views.generic import UpdateView
 from django.contrib import messages
+from home.models import BlogPost
 
 
 def blogs(request):
@@ -13,9 +14,6 @@ def blogs(request):
     posts = BlogPost.objects.filter().order_by('-dateTime')
     return render(request, "blog.html", {'posts':posts})
 
-#def post(request, slug):  
- #   post = get_object_or_404(BlogPost, slug=slug)
-  #  return render(request, "blogpost.html", {"post": post})
 
 def Delete_Blog_Post(request, slug):
     posts = BlogPost.objects.get(slug=slug)
@@ -53,7 +51,7 @@ class UpdatePostView(UpdateView):
     fields = ['title', 'slug', 'content', 'image']
 
 def user_profile(request, myid):
-    post = BlogPost.objects.filter(id=myid)
+    post = BlogPost.objects.filter(id=myid).first()
     return render(request, "user_profile.html", {'post':post})
 
 def Profile(request):
