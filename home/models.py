@@ -4,9 +4,9 @@ from django.urls import reverse
 from django.utils.timezone import now
 from ckeditor_uploader.fields import RichTextUploadingField
 
-
     
 class Profile(models.Model):
+    id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(upload_to="profile_pics", blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
@@ -19,6 +19,7 @@ class Profile(models.Model):
         return str(self.user)
 
 class BlogPost(models.Model):
+    id = models.AutoField(primary_key=True)
     title=models.CharField(max_length=255)
     author= models.ForeignKey(User, on_delete=models.CASCADE)
     slug=models.CharField(max_length=130)
@@ -35,6 +36,7 @@ class BlogPost(models.Model):
 
     
 class Comment(models.Model):
+    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
