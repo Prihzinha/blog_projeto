@@ -20,9 +20,9 @@ urlpatterns = [
 
 
     #     profile
-    path("Profile/", views.Profile, name="profile"),
+    path('profile/', views.Profile, name='profile'),
     path("edit_profile/", views.edit_profile, name="edit_profile"),
-    path("Profile/user_profile/<int:myid>/", views.user_profile, name="user_profile"),
+    path("user_profile/<int:myid>/", views.user_profile, name="user_profile"),
 
     #    user authentication
     path("register/", views.Register, name="register"),

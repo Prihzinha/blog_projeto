@@ -36,6 +36,7 @@
                         <div class="profile-img">
                             {% if i.author.profile.image %}
                             <img src="{{i.author.profile.image.url}}" alt="" width="310px" height="270px">
+                            <a href="{% url 'user_profile' user.id %}">
                             {% endif %}
                         </div>
                     </div>

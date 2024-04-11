@@ -15,8 +15,11 @@
 {% block js %}
 <script>
     {% if alert %}
-    alert('Your Profile has been updated successfully.');
+    alert('Seu perfil foi atualizado com sucesso.');
     document.location = '/profile/';
+    {% else %}
+        alert('Acesso negado. Você não está autorizado a editar este perfil.');
+        document.location = '/';
     {% endif %}
 </script>
 {% endblock %}

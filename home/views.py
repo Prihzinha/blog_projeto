@@ -51,8 +51,8 @@ class UpdatePostView(UpdateView):
     fields = ['title', 'slug', 'content', 'image']
 
 def user_profile(request, myid):
-    post = BlogPost.objects.filter(id=myid).first()
-    return render(request, "user_profile.html", {'post':post})
+    user = User.objects.get(id=myid)
+    return render(request, "profile.html", {'user':user})
 
 def Profile(request):
     return render(request, "profile.html")

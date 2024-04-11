@@ -13,17 +13,23 @@
 {% block body %}
   <form action="/add_blogs/" enctype="multipart/form-data" method="POST">
     {% csrf_token %}
-    <div class="container mt-4">
-      {{ form.as_p }}
-      <button class="btn btn-primary">Add Blog</button>
-    </div>
+    {{ form.media }}
+    <div class="form-group">{{ form.title.label_tag }}
+      {{ form.title }}</div>
+    <div class="form-group">{{ form.slug.label_tag }}
+      {{ form.slug }}</div>
+    <div class="form-group">{{ form.content.label_tag }}
+      {{ form.content }}</div>
+    <div class="form-group">{{ form.image.label_tag }}
+      {{ form.image }}</div>
+    <button class="btn btn-primary">Add Blog</button>
   </form>
 {% endblock %}
 {% block js %}
-  <script>
-    {% if alert %}
-    alert('Your Blog is added successfully.');
-    document.location = '/';
-    {% endif %}
-</script>
+  {% if alert %}
+    <script>
+      alert('Your Blog is added successfully.')
+      document.location = '/'
+    </script>
+  {% endif %}
 {% endblock %}

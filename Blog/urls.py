@@ -13,8 +13,8 @@ urlpatterns = [
     path('', include('home.urls', namespace='home')), #puxando as urls do aplicativo
     
     #   Profile
-    path("Profile/user_profile/", views.user_profile, name="user_profile"),
-    path('Profile/', views.Profile, name='Profile'),
+    path('profile/', views.Profile, name='profile'),
+    path("user_profile/<int:myid>/", views.user_profile, name="user_profile"),
     path('edit_profile/', views.edit_profile, name='edit_profile'),
     
     #   Busca
