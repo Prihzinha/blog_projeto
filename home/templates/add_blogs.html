@@ -1,35 +1,70 @@
 {% extends 'base.html' %}
 
-{% block title %}
-  Add Blog
-{% endblock %}
-{% block add_blogs_active %}
-  active
-{% endblock %}
+{% block title %} Add Blog {% endblock %}
 
-{% block css %}
+{% block add_blogs_active %} active {% endblock %}
 
-{% endblock %}
+{% block css %} {% endblock %}
+
 {% block body %}
-  <form action="/add_blogs/" enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    {{ form.media }}
-    <div class="form-group">{{ form.title.label_tag }}
-      {{ form.title }}</div>
-    <div class="form-group">{{ form.slug.label_tag }}
-      {{ form.slug }}</div>
-    <div class="form-group">{{ form.content.label_tag }}
-      {{ form.content }}</div>
-    <div class="form-group">{{ form.image.label_tag }}
-      {{ form.image }}</div>
-    <button class="btn btn-primary">Add Blog</button>
-  </form>
+    <form action="/add_blogs/" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.media }}
+        <div class="form-group">{{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+        <div class="form-group">{{ form.slug.label_tag }}
+            {{ form.slug }}
+        </div>
+        <div class="form-group">{{ form.content.label_tag }}
+            {{ form.content }}
+        </div>
+        <div class="form-group">{{ form.image.label_tag }}
+            {{ form.image }}
+        </div>
+        <button class="btn btn-primary">Add Blog</button>
+    </form>
 {% endblock %}
+
 {% block js %}
-  {% if alert %}
     <script>
-      alert('Your Blog is added successfully.')
-      document.location = '/'
+        function slugify(s) {
+            return s.toLowerCase()
+                .replace(/[^-\w\s]/g, "") // remove non-alphanumerics
+                .trim()
+                .replace(/[-\s]+/g, "-") // spaces to hyphens
+                .replace(/-+$/, ""); // trim trailing hyphens
+        }
+
+        function slugAutoFill() {
+            var titleInput = document.querySelector('#id_title');
+            var slugInput = document.querySelector('#id_slug');
+
+            if (!titleInput) {
+                return;
+            }
+
+            let slugManuallyEdited = false;
+
+            slugInput.addEventListener('change', () => {
+                slugManuallyEdited = !!slugInput.value;
+            });
+
+            function titleEdited() {
+                if (slugManuallyEdited) {
+                    return;
+                }
+                slugInput.value = slugify(titleInput.value);
+                concole.log(slugInput.value)
+            }
+
+            titleInput.addEventListener('change', titleEdited);
+            titleInput.addEventListener('focus', titleEdited);
+            titleInput.addEventListener('keyup', titleEdited);
+        }
+
+        slugAutoFill();
+        concole.log(titleInput)
+
     </script>
-  {% endif %}
 {% endblock %}
