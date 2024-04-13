@@ -2,13 +2,56 @@
 
 {% block title %} Edit Blog Post {% endblock %}
 
-{% block css %}
-{% endblock %}
+{% block css %} {% endblock %}
+
 {% block body %}
-<form enctype="multipart/form-data" method="POST"> {% csrf_token %}
-<div class="container mt-4">
-{{ form.as_p }}
-<button class="btn btn-primary">Update Blog</button>
-</div>
-</form>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div class="container mt-4">
+            {{ form.as_p }}
+            <button class="btn btn-primary">Update Blog</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block js %}
+    <script>
+        function slugify(s) {
+            return s.toLowerCase()
+                .replace(/[^-\w\s]/g, "") // remove non-alphanumerics
+                .trim()
+                .replace(/[-\s]+/g, "-") // spaces to hyphens
+                .replace(/-+$/, ""); // trim trailing hyphens
+        }
+
+        function slugAutoFill() {
+            var titleInput = document.querySelector('#id_title');
+            var slugInput = document.querySelector('#id_slug');
+
+            if (!titleInput) {
+                return;
+            }
+
+            let slugManuallyEdited = false;
+
+            slugInput.addEventListener('change', () => {
+                slugManuallyEdited = !!slugInput.value;
+            });
+
+            function titleEdited() {
+                if (slugManuallyEdited) {
+                    return;
+                }
+                slugInput.value = slugify(titleInput.value);
+            }
+
+            titleInput.addEventListener('change', titleEdited);
+            titleInput.addEventListener('focus', titleEdited);
+            titleInput.addEventListener('keyup', titleEdited);
+        }
+
+        slugAutoFill();
+        concole.log(titleInput)
+
+    </script>
 {% endblock %}
