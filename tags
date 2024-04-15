@@ -13,7 +13,7 @@ CKEDITOR_UPLOAD_PATH	Blog/settings.py	/^CKEDITOR_UPLOAD_PATH = 'media\/uploads\/
 Comment	home/models.py	/^class Comment(models.Model):$/;"	c
 DATABASES	Blog/settings.py	/^DATABASES = {$/;"	v
 DEBUG	Blog/settings.py	/^DEBUG = True$/;"	v
-DEFAULT_AUTO_FIELD	Blog/settings.py	/^DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'/;"	v
+DEFAULT_AUTO_FIELD	Blog/settings.py	/^DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'$/;"	v
 Delete_Blog_Post	home/views.py	/^def Delete_Blog_Post(request, slug):$/;"	f
 HomeConfig	home/apps.py	/^class HomeConfig(AppConfig):$/;"	c
 INSTALLED_APPS	Blog/settings.py	/^INSTALLED_APPS = [$/;"	v
@@ -43,7 +43,7 @@ SECRET_KEY	Blog/settings.py	/^SECRET_KEY = 'ejcw-d5t67dgrz$_evfgd#kz7y_ku70urb5b
 STATICFILES_DIRS	Blog/settings.py	/^STATICFILES_DIRS = [$/;"	v
 STATIC_URL	Blog/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 TEMPLATES	Blog/settings.py	/^TEMPLATES = [$/;"	v
-TIME_ZONE	Blog/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
+TIME_ZONE	Blog/settings.py	/^TIME_ZONE = 'America\/Sao_Paulo'$/;"	v
 USE_I18N	Blog/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	Blog/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	Blog/settings.py	/^USE_TZ = True$/;"	v
@@ -133,18 +133,17 @@ operations	home/migrations/0007_alter_profile_user.py	/^    operations = [$/;"	v
 operations	home/migrations/0008_alter_blogpost_slug.py	/^    operations = [$/;"	v	class:Migration
 parent_comment	home/models.py	/^    parent_comment = models.ForeignKey($/;"	v	class:Comment
 phone_no	home/models.py	/^    phone_no = models.IntegerField(blank=True, null=True)$/;"	v	class:Profile
-pre_save_slugify_receiver	home/forms.py	/^        def pre_save_slugify_receiver(sender, instance, *args, **kwargs):$/;"	m	class:BlogPostForm.Meta
 preserve_default	home/migrations/0004_blogpost_video.py	/^            preserve_default=False,$/;"	v	class:Migration
 search	home/views.py	/^def search(request):$/;"	f
 slug	home/models.py	/^    slug = models.SlugField(max_length=200, allow_unicode=False)$/;"	v	class:BlogPost
 slugAutoFill	home/templates/add_blogs.html	/^        function slugAutoFill() {$/;"	f
-slugAutoFill	home/templates/edit_profile.html	/^        function slugAutoFill() {$/;"	f
+slugAutoFill	home/templates/edit_blog_post.html	/^        function slugAutoFill() {$/;"	f
 slugify	home/templates/add_blogs.html	/^        function slugify(s) {$/;"	f
-slugify	home/templates/edit_profile.html	/^        function slugify(s) {$/;"	f
+slugify	home/templates/edit_blog_post.html	/^        function slugify(s) {$/;"	f
 template_name	home/views.py	/^    template_name = 'edit_blog_post.html'$/;"	v	class:UpdatePostView
 title	home/models.py	/^    title = models.CharField(max_length=255)$/;"	v	class:BlogPost
 titleEdited	home/templates/add_blogs.html	/^            function titleEdited() {$/;"	f
-titleEdited	home/templates/edit_profile.html	/^            function titleEdited() {$/;"	f
+titleEdited	home/templates/edit_blog_post.html	/^            function titleEdited() {$/;"	f
 urlpatterns	Blog/urls.py	/^urlpatterns = [$/;"	v
 urlpatterns	home/urls.py	/^urlpatterns = [$/;"	v
 user	home/models.py	/^    user = models.ForeignKey(User, on_delete=models.CASCADE)$/;"	v	class:Comment
